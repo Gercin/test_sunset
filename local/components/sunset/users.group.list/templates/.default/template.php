@@ -1,9 +1,9 @@
 <?php if ($arResult['ITEMS']) : ?>
 	<table class="table">
 		<tr class="tr">
-			<th class="th"><?= GetMessage('TABLE_ID'); ?></th>
-			<th class="th"><?= GetMessage('TABLE_NAME'); ?></th>
-			<th class="th"><?= GetMessage('TABLE_DESC'); ?></th>
+			<th class="th"><?= GetMessage('SUNSET_USERS_GROUP_LIST_TABLE_ID'); ?></th>
+			<th class="th"><?= GetMessage('SUNSET_USERS_GROUP_LIST_TABLE_NAME'); ?></th>
+			<th class="th"><?= GetMessage('SUNSET_USERS_GROUP_LIST_TABLE_DESC'); ?></th>
 		</tr>
 		<?php foreach ($arResult['ITEMS'] as $key => $item) : ?>
 			<tr class="tr">

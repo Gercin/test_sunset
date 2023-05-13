@@ -2,15 +2,14 @@
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
 $arComponentDescription = [
-    'NAME' => GetMessage('NAME'),
+    'NAME' => GetMessage('SUNSET_USERS_GROUP_LIST_NAME'),
     'PATH' => [
         'ID' => 'sunset',
         'CHILD' => [
             'ID' => 'users.group.list',
-            'NAME' => GetMessage('NAME')
+            'NAME' => GetMessage('SUNSET_USERS_GROUP_LIST_NAME')
         ],
     ],
-    'PAGE_TITLE' => GetMessage('TITLE'),
-    'CACHE_TIME' => GetMessage('CACHE_TIME'),
+    'CACHE_TIME' => GetMessage('SUNSET_USERS_GROUP_LIST_CACHE_TIME'),
     'CACHE_PATH' => 'Y',
 ];

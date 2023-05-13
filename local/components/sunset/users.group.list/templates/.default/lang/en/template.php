@@ -1,4 +1,4 @@
 <?php
-$MESS['TABLE_ID'] = 'ID';
-$MESS['TABLE_NAME'] = 'Group name';
-$MESS['TABLE_DESC'] = 'Group Description';
+$MESS['SUNSET_USERS_GROUP_LIST_TABLE_ID'] = 'ID';
+$MESS['SUNSET_USERS_GROUP_LIST_TABLE_NAME'] = 'Group name';
+$MESS['SUNSET_USERS_GROUP_LIST_TABLE_DESC'] = 'Group Description';
