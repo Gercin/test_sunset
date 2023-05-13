@@ -1,7 +1,6 @@
-<?
-$sSectionName = "Пользователи";
-$arDirProperties = Array(
-   "title" => "Пользователи",
-   "keywords_inner" => "Пользователи"
-);
-?>
+<?php
+$sSectionName = 'Группы пользователей';
+$arDirProperties = [
+   'title' => 'Группы пользователей',
+   'keywords_inner' => 'Группы пользователей'
+];

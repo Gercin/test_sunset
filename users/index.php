@@ -1,8 +1,12 @@
-<?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Пользователи");
-?>
+<?php
+require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
+$APPLICATION->SetTitle('Группы пользователей');
 
-Текст....
+$APPLICATION->IncludeComponent(
+    'sunset:users.group.list',
+    '.default',
+    [],
+    false
+);
 
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php');
