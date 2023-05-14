@@ -1,7 +1,5 @@
 <?php
 
-if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true) die();
-
 use Bitrix\Main\Data\Cache;
 
 // Проверка и инициализация входных параметров
@@ -26,10 +24,6 @@ foreach ($this->arParams as $k => $v) {
 
 $cacheDir = '/' . SITE_ID . $this->GetRelativePath();
 $cache    = Cache::createInstance();
-
-if (!isset($arParams['CACHE_TIME'])) {
-	$arParams['CACHE_TIME'] = 3600;
-}
 
 if ($cache->startDataCache($arParams['CACHE_TIME'], $cacheId, $cacheDir)) {
 	// Запрос данных и формирование массива $arResult
