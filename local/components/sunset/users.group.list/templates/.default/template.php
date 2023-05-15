@@ -1,4 +1,6 @@
-<?php if ($arResult['ITEMS']) : ?>
+<?php 
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true) die();
+if ($arResult['ITEMS']) : ?>
 	<table class="table">
 		<tr class="tr">
 			<th class="th"><?= GetMessage('SUNSET_USERS_GROUP_LIST_TABLE_ID'); ?></th>

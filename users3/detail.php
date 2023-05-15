@@ -4,7 +4,9 @@
 
 if ($arUsersGroups[$path['2']]) :
 
-    $arGroup = $arUsersGroups[$path['2']] ?>
+    $arGroup = $arUsersGroups[$path['2']];
+    $APPLICATION->AddChainItem($arGroup['NAME'], $arPath);
+?>
     <div>
         <h3><?= $arGroup['NAME'] ?></h3>
         <br />

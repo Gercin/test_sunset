@@ -7,5 +7,11 @@ $arComponentParameters = [
 		'CACHE_TIME'  =>  [
 			'DEFAULT' => 36000000
 		],
+		'CACHE_GROUPS' => [
+			'PARENT' => 'CACHE_SETTINGS',
+			'NAME' => 'Учитывать права доступа',
+			'TYPE' => 'CHECKBOX',
+			'DEFAULT' => 'Y',
+		],
 	],
 ];

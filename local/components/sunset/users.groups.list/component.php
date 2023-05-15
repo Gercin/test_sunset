@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true) die();
+
 use Bitrix\Main\Data\Cache;
 
 // Проверка и инициализация входных параметров
@@ -25,6 +27,10 @@ foreach ($this->arParams as $k => $v) {
 $cacheDir = '/' . SITE_ID . $this->GetRelativePath();
 $cache    = Cache::createInstance();
 
+if (!isset($arParams['CACHE_TIME'])) {
+	$arParams['CACHE_TIME'] = 3600;
+}
+
 if ($cache->startDataCache($arParams['CACHE_TIME'], $cacheId, $cacheDir)) {
 	// Запрос данных и формирование массива $arResult
 	$arBy = ['c_sort'];
@@ -33,7 +39,12 @@ if ($cache->startDataCache($arParams['CACHE_TIME'], $cacheId, $cacheDir)) {
 	$rsGroups = CGroup::GetList($arBy, $arOrder, []);
 	if (intval($rsGroups->SelectedRowsCount()) > 0) {
 		while ($arGroups = $rsGroups->Fetch()) {
-			$arUsersGroups[] = $arGroups;
+			$arUsersGroups[$arGroups['ID']] = $arGroups;
+			if ($arParams['ELEMENT_URL']) {
+				$link = str_replace('#ELEMENT_ID#', $arGroups['ID'], $arParams['ELEMENT_URL']);
+				$arUsersGroups[$arGroups['ID']]['LINK'] = $link;
+				$arResult['SHOW_LINK'] = 'Y';
+			}
 		}
 	}
 

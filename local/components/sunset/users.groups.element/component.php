@@ -1,6 +1,9 @@
 <?php
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
-if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true) die();
+use Bitrix\Main\Loader;
+
+Loader::includeModule('iblock');
 
 if (!isset($arParams['CACHE_TIME'])) {
 	$arParams['CACHE_TIME'] = 3600;
@@ -40,7 +43,7 @@ if ($this->StartResultCache(false, ($arParams['CACHE_GROUPS'] === 'N' ? false : 
 		$rsGroups = CGroup::GetList($arBy, $arOrder, $arFilter);
 		if (intval($rsGroups->SelectedRowsCount()) > 0) {
 			while ($arGroups = $rsGroups->Fetch()) {
-				$arUsersGroups[] = $arGroups;
+				$arUsersGroups = $arGroups;
 			}
 		}
 
@@ -48,6 +51,9 @@ if ($this->StartResultCache(false, ($arParams['CACHE_GROUPS'] === 'N' ? false : 
 	}
 
 	if (isset($arResult['ID'])) {
+
+		$link = str_replace('#ELEMENT_ID#', $arResult['ID'], $arParams['ELEMENT_URL']);
+		$APPLICATION->AddChainItem($arResult['NAME'], $link);
 		$this->SetResultCacheKeys(
 			array(
 				'ID',
